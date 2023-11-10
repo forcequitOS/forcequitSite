@@ -1,31 +1,133 @@
-body{
+/*This was partially made by ChatGPT. Sorry. */
+/*Also here's a :3 if you're reading this. */
+/* Common styles for both light and dark mode */
+body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color:darkslateblue;
+    background-color: #007AFF; /* Blue background in light mode */
+    color: #1b2763; /* Blue text in light mode */
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Add a small shadow */
 }
-h1{
-    color:lightsteelblue
+
+p, h1, h2, h3, h4, a:link {
+    margin: 0.32em 0;
+    padding: 5px; /* Add some text padding (inset) */
 }
-p {
-    color:lightsteelblue;
-    font-size:16px
+
+h1, h2, h3, h4 {
+    color: #23327f; /* Lighter blue headings in light mode */
 }
-h3{
-    color:lightsteelblue
+
+a:link {
+    color: #141d49; /* Slightly darker unclicked link text color in light mode */
+    text-decoration: none;
 }
-img{
-    border-radius: 10px;
-    align-self: flex-end;
+
+a:hover {
+    text-decoration: underline;
 }
-ul{
-    color:mediumslateblue
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #02355c; /* Slightly lighter background in dark mode */
+        color: #FFA500; /* Orange text in dark mode */
+        box-shadow: 2px 2px 5px rgba(255, 165, 0, 0.2); /* Shadow for dark mode */
+    }
+
+    h1, h2, h3, h4 {
+        color: #FFA500; /* Orange headings in dark mode */
+    }
+
+    a:link {
+        color: #FF6347; /* Slightly darker unclicked link text color in dark mode */
+    }
+
+    a:visited {
+        color: #FF6347; /* Darker orange for visited links in dark mode */
+    }
 }
-a{
-    color:mediumpurple
+
+/*TAB BAR STUFF*/
+/* Style the tab bar for larger screens */
+.tab-bar {
+    display: inline-flex; /* Change to inline-flex for minimum width */
+    justify-content: center;
+    background-color: #003f6f; /* Slightly bluer background in dark mode */
+    color: #FF8C00; /* Slightly darker text color */
+    padding: 0px 0; /* Slightly smaller height on larger screens */
+    border-radius: 15px; /* Rounded corners */
+    position: relative; /* Position the tab bar relative to the content */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    margin-top: 10px; /* Add margin to create space between tab bar and content */
 }
-sub{
-    font-size:12px;
-    color:lightsteelblue;
+
+.tab-bar a {
+    text-decoration: none;
+    color: #FF8C00; /* Slightly darker text color */
+    margin: 10px;
+    padding: 8px 12px; /* Adjust padding for links */
+    border-radius: 5px; /* Add rounded corners */
+    transition: background-color 0.125s; /* Smooth color change on hover */
+    font-weight: bold; /* Make the text bold */
 }
-ol{
-    color:mediumslateblue
+
+.tab-bar a:hover {
+    background-color: #047aff; /* Slightly bluer background on hover for contrast in light mode */
+}
+
+/* Light mode styles for the tab bar */
+@media (prefers-color-scheme: light) {
+    .tab-bar {
+        background-color: #2168ae; /* Slightly bluer background color in light mode */
+        color: #23327f; /* Dark blue text color */
+    }
+
+    .tab-bar a {
+        color: #23327f; /* Dark blue text color */
+    }
+}
+
+/* Dark mode styles for the tab bar */
+@media (prefers-color-scheme: dark) {
+    .tab-bar {
+        background-color: #003f6f; /* Slightly bluer background in dark mode */
+        color: #FF8C00; /* Slightly darker text color in dark mode */
+    }
+
+    .tab-bar a {
+        color: #FF8C00; /* Slightly darker text color in dark mode */
+        font-weight: bold; /* Make the text bold in dark mode */
+    }
+
+    .tab-bar a:hover {
+        background-color: #02355c; /* Slightly bluer background on hover for contrast in dark mode */
+    }
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 650px) {
+    .tab-bar {
+        display: block;
+        text-align: left;
+        padding: 6px 0px;
+        font-size:18px;
+    }
+
+    .tab-bar a {
+        display: block;
+        padding: 6px;
+        font-weight: bold;
+    }
+
+    img {
+        display: none; /* Hide all images on smaller screens */
+    }
+    
+    p {
+        font-size: 18px;
+    }
 }
